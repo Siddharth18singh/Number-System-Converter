@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int decimalNumber;
+
+    // Prompt the user for input
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimalNumber);
+
+    // Convert to binary, octal, and hexadecimal
+    printf("Decimal %d in binary is: ", decimalNumber);
+    int binary[32];
+    int i = 0;
+    while (decimalNumber > 0) {
+        binary[i] = decimalNumber % 2;
+        decimalNumber /= 2;
+        i++;
+    }
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%d", binary[j]);
+    }
+    printf("\n");
+
+    printf("Decimal %d in octal is: 0%o\n", decimalNumber, decimalNumber);
+    printf("Decimal %d in hexadecimal is: 0x%X\n", decimalNumber, decimalNumber);
+
+    return 0;
+}
